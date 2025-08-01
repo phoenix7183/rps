@@ -7,3 +7,10 @@ function computerChoice (){
   return compOption;
 }
 console.log(computerChoice());
+
+function userChoice (){
+   let userOption= prompt("choose among rock, paper, scissors","");
+    let userOptCaseInsensitive= userOption.toLowerCase();
+   return userOptCaseInsensitive;
+}
+console.log(userChoice());
