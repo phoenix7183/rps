@@ -20,8 +20,20 @@ let computerScore=0;
 
 function playRound(){
     for (let i = 0; i <= 5; i++) {
-        if () {
-            
+        if (computerChoice()=="rock" && userChoice()=="rock") {
+            return alert("draw")
+           }
+        else if ( computerChoice()=="rock"&& userChoice()=='paper'){
+            userScore++;
+            return alert("paper beat rock");
+        } 
+        else if ( computerChoice()=="rock"&& userChoice()=='scissors'){
+            computerScore++;
+            return alert("rock beats scissors");
+        }  
+        else if (computerChoice()=='paper'&& userChoice=="rock"){
+            computerScore++;
+            return(alert("paper beats rock"));
         }
         
     }
