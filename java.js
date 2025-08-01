@@ -7,57 +7,33 @@ function computerChoice (){
   return compOption;
 }
 
-
+let compSelection= computerChoice();
+console.log(compSelection);
 
 function userChoice (){
    let userOption= prompt("choose among rock, paper, scissors","");
     let userOptCaseInsensitive= userOption.toLowerCase();
    return userOptCaseInsensitive;
 }
-
+let userSelection= userChoice();
+console.log(userSelection);
 let userScore=0;
 let computerScore=0;
 
-function playRound(){
-    for (let i = 0; i <= 5; i++) {
-        console.log(computerChoice());
-        console.log(userChoice());
+function playRound( compSelection, userSelection) {
+    
 
-        if (computerChoice()=="rock" && userChoice()=="rock") {
-            return alert("draw")
+        if (compSelection==userSelection) {
+            return ("draw")
            }
-        else if ( computerChoice()=="rock"&& userChoice()=='paper'){
+        else if ( compSelection=="rock"&& userSelection=='paper'||compSelection=='paper'&& userSelection=='scissors'||compSelection=='scissors'&& userSelection=='rock'){
             userScore++;
-            return alert("paper beat rock");
+    return alert(`You Win ${userSelection} beats ${compSelection}`)
         } 
-        else if ( computerChoice()=="rock"&& userChoice()=='scissors'){
-            computerScore++;
-            return alert("rock beats scissors");
-        }  
-        else if (computerChoice()=='paper'&& userChoice=="rock"){
-            computerScore++;
-            return alert("paper beats rock");
-        }
-        else if ( computerChoice()== 'paper'&& userChoice()=='paper'){
-            return alert("it's a draw");
-        }
-        else if (computerChoice()=='paper'&& userChoice()=='scissors'){
-            userScore++;
-            return alert('scissors beat paper');
-        }
-        else if (computerChoice()=='scissors'&& userChoice()=='rock'){
-            userScore++;
-            return alert('rock beats scissors');
-        }
-        else if(computerChoice()=='scissors'&& userChoice()=='paper'){
-            computerScore++;
-            return alert('scissors beats paper');
-        }
-        else if (computerChoice()=='scissors'&& userChoice()=='scissors'){
-            return alert('it is a draw')
-        }
-    }
+    return alert(`You Loose! ${compSelection} beats ${userSelection}`)
+    
 }
-console.log(playRound());
+
+console.log(playRound(compSelection, userSelection));
 console.log(userScore);
 console.log(computerScore);
