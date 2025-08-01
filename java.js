@@ -38,3 +38,4 @@ function playRound(){
         
     }
 }
+console.log(playRound());
