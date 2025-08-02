@@ -1,4 +1,9 @@
 console.log("hello World");
+let userScore=0;
+let computerScore=0;
+
+for (let i = 0; i < 5; i++) {
+    
 
 function computerChoice (){
 
@@ -17,8 +22,6 @@ function userChoice (){
 }
 let userSelection= userChoice();
 console.log(userSelection);
-let userScore=0;
-let computerScore=0;
 
 function playRound( compSelection, userSelection) {
     
@@ -30,10 +33,17 @@ function playRound( compSelection, userSelection) {
             userScore++;
     return alert(`You Win ${userSelection} beats ${compSelection}`)
         } 
+        computerScore++
     return alert(`You Loose! ${compSelection} beats ${userSelection}`)
     
 }
 
-console.log(playRound(compSelection, userSelection));
+playRound( compSelection, userSelection);
+}
 console.log(userScore);
 console.log(computerScore);
+
+if (userScore>computerScore){
+    alert("Congratulations! You won the tournament")
+}
+else alert("Oops! you lost the tournament")
