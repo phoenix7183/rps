@@ -1,57 +1,37 @@
-console.log("hello World");
-let userScore=0;
-let computerScore=0;
+const rock=document.querySelector(".rock");
+const paper=document.querySelector(".paper");
+const scissors=document.querySelector(".scissors");
+let choices=["rock", "paper", "scissors"];
+const div=document.querySelector(".div");
+const h1= document.querySelector('h1');
 
-let userOption= document.querySelectorAll("buttons");
-   let rock= document.querySelector(".rock");
-   let paper=document.querySelector(".paper");
-   let scissors=document.querySelector("scissors");
-   userOption.addEventList
-
-for (let i = 0; i < 5; i++) {
+let playerScore=0;
+let compScore=0;
     
 
-function computerChoice (){
-
-    let choices= ["rock", "paper", "scissors"];
-  let compOption= choices[Math.floor(Math.random()*choices.length)];
-  return compOption;
-}
-
-let compSelection= computerChoice();
-console.log(compSelection);
-
-
-function userChoice (){
+function playGame (userSelection) {
+function compChoice(){ 
+    return choices[Math.floor(Math.random()*choices.length)];
+   }
    
+   let compSelection= compChoice();
+   console.log(compSelection);
+   div.textContent=`${userSelection}`;
    
-    let userOptCaseInsensitive= userOption.toLowerCase();
-   return userOptCaseInsensitive;
-}
-let userSelection= userChoice();
-console.log(userSelection);
+   if (userSelection==compSelection){
+    h1.textContent= "It's a tie"
+    playerScore++;
+    playerScore++;
+   }
+   else if(userSelection=="rock" && compSelection=="scissors"||userSelection=="paper"&&compSelection=="rock"||userSelection=="scissors"&&compSelection=="paper"){
+    h1.textContent= `You win! ${userSelection} beats ${compSelection}`;
+    playerScore++;
+    }
+else if(userSelection=="scissors" && compSelection=="rock"||userSelection=="rock"&&compSelection=="paper"||userSelection=="paper"&&compSelection=="scissors"){
+    h1.textContent= `You win! ${compSelection} beats ${userSelection}`;
+    compScore++;
+    }
 
-function playRound( compSelection, userSelection) {
-    
 
-        if (compSelection==userSelection) {
-            return ("draw")
-           }
-        else if ( compSelection=="rock"&& userSelection=='paper'||compSelection=='paper'&& userSelection=='scissors'||compSelection=='scissors'&& userSelection=='rock'){
-            userScore++;
-    return alert(`You Win ${userSelection} beats ${compSelection}`)
-        } 
-        computerScore++
-    return alert(`You Loose! ${compSelection} beats ${userSelection}`)
-    
 }
 
-playRound( compSelection, userSelection);
-}
-console.log(userScore);
-console.log(computerScore);
-
-if (userScore>computerScore){
-    alert("Congratulations! You won the tournament")
-}
-else alert("Oops! you lost the tournament")
