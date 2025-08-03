@@ -2,6 +2,12 @@ console.log("hello World");
 let userScore=0;
 let computerScore=0;
 
+let userOption= document.querySelectorAll("buttons");
+   let rock= document.querySelector(".rock");
+   let paper=document.querySelector(".paper");
+   let scissors=document.querySelector("scissors");
+   userOption.addEventList
+
 for (let i = 0; i < 5; i++) {
     
 
@@ -15,8 +21,10 @@ function computerChoice (){
 let compSelection= computerChoice();
 console.log(compSelection);
 
+
 function userChoice (){
-   let userOption= prompt("choose among rock, paper, scissors","");
+   
+   
     let userOptCaseInsensitive= userOption.toLowerCase();
    return userOptCaseInsensitive;
 }
