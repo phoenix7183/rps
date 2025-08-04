@@ -19,7 +19,7 @@ function compChoice(){
    
    let compSelection= compChoice();
    console.log(compSelection);
-   div.textContent=`${userSelection}`;
+   div.textContent=`Player Choice: ${userSelection}`;
    
    if (userSelection==compSelection){
     h1.textContent= "It's a tie"
